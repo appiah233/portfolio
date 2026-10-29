@@ -80,6 +80,23 @@ export const PROJECTS: Project[] = [
     live: 'https://appiah233.github.io/SC-100/',
     tech: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
   },
+  {
+    name: 'Windows 10 VPS',
+    description: 'A shell script that starts a Windows 10 virtual machine with QEMU and exposes Remote Desktop access through an ngrok tunnel.',
+    id: 'windows-10-vps',
+    featured: false,
+    role: 'Infrastructure scripting',
+    github: 'https://github.com/appiah233/Windows-10-VPS',
+    tech: ['Shell', 'QEMU', 'ngrok', 'RDP'],
+  },
+  {
+    name: 'Medical App',
+    description: 'A staff medical claims application covering requests, approval routing, balances, approved hospitals, insurance plans, dependents and records.',
+    id: 'medical-app',
+    featured: false,
+    role: 'Application development',
+    tech: ['React', 'TypeScript', 'Azure SQL', 'Azure Storage'],
+  },
 ]
 
 export const CERTIFICATIONS: Certification[] = [
@@ -113,9 +130,9 @@ export const EXPERIENCE: Experience[] = [
   {
     period: 'Cloud & DevOps',
     role: 'Cloud Infrastructure & CI/CD',
-    focus: 'Vercel \u2022 GitHub \u2022 Git \u2022 CI/CD \u2022 Deployment Automation',
+    focus: 'Vercel \u2022 GitHub \u2022 Git \u2022 CI/CD \u2022 GitLab Auto DevOps',
     detail:
-      'Deploying and maintaining applications on cloud platforms with reliable CI/CD pipelines.',
+      'Working with teams through GitHub collaboration, Git workflows, and automated deployment pipelines.',
     id: 'exp-cloud-devops',
   },
   {
@@ -165,7 +182,11 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     name: 'Cloud / DevOps',
-    skills: ['Vercel', 'Git', 'GitHub', 'CI/CD'],
+    skills: ['Vercel', 'Git', 'GitHub collaboration', 'GitLab Auto DevOps', 'CI/CD'],
+  },
+  {
+    name: 'Team collaboration',
+    skills: ['Slack', 'Microsoft Teams', 'GitHub', 'Git workflows'],
   },
 ]
 

@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
 import { CERTIFICATIONS, EXPERIENCE, PROJECTS, SKILL_GROUPS } from './data'
-import profilePhoto from '../Eric Profile 2.jpg.jpeg'
+import { HeroPortrait } from './hero-portrait'
 
 const featured = PROJECTS.filter((project) => project.featured)
 const other = PROJECTS.filter((project) => !project.featured)
@@ -27,11 +26,7 @@ export default function Page() {
                 <a className="btn btn-outline" href="#contact">Contact me <ArrowRight size={16} aria-hidden="true" /></a>
               </div>
             </div>
-            <div className="hero-portrait" aria-label="Portrait of Eric Appiah Owusu">
-              <div className="hero-red" aria-hidden="true" />
-              <Image src={profilePhoto} alt="Eric Appiah Owusu" fill priority sizes="(max-width: 800px) 100vw, 46vw" />
-              <span className="hero-side">Cloud / Identity / Engineering</span>
-            </div>
+            <HeroPortrait />
           </div>
           <div className="hero-foot"><span>Based in Ghana · Working across cloud &amp; code</span><span>Scroll to explore ↓</span></div>
         </div>
