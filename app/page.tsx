@@ -1,270 +1,105 @@
-'use client'
-import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
-import { Spotlight } from '@/components/ui/spotlight'
-import { Magnetic } from '@/components/ui/magnetic'
-import {
-  MorphingDialog,
-  MorphingDialogTrigger,
-  MorphingDialogContent,
-  MorphingDialogClose,
-  MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog'
-import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
-import {
-  PROJECTS,
-  WORK_EXPERIENCE,
-  BLOG_POSTS,
-  EMAIL,
-  SOCIAL_LINKS,
-} from './data'
+import Image from 'next/image'
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
+import { CERTIFICATIONS, EXPERIENCE, PROJECTS, SKILL_GROUPS } from './data'
+import profilePhoto from '../Eric Profile 2.jpg.jpeg'
 
-const VARIANTS_CONTAINER = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+const featured = PROJECTS.filter((project) => project.featured)
+const other = PROJECTS.filter((project) => !project.featured)
+
+function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return <a className="text-link" href={href} target="_blank" rel="noopener noreferrer">{children}<ArrowUpRight size={15} aria-hidden="true" /></a>
 }
 
-const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-}
-
-const TRANSITION_SECTION = {
-  duration: 0.3,
-}
-
-type ProjectVideoProps = {
-  src: string
-}
-
-function ProjectVideo({ src }: ProjectVideoProps) {
+export default function Page() {
   return (
-    <MorphingDialog
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.3,
-      }}
-    >
-      <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
-        </MorphingDialogContent>
-        <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-          variants={{
-            initial: { opacity: 0 },
-            animate: {
-              opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
-            },
-            exit: { opacity: 0, transition: { duration: 0 } },
-          }}
-        >
-          <XIcon className="h-5 w-5 text-zinc-500" />
-        </MorphingDialogClose>
-      </MorphingDialogContainer>
-    </MorphingDialog>
-  )
-}
-
-function MagneticSocialLink({
-  children,
-  link,
-}: {
-  children: React.ReactNode
-  link: string
-}) {
-  return (
-    <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
-      <a
-        href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
-      >
-        {children}
-        <svg
-          width="15"
-          height="15"
-          viewBox="0 0 15 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-3 w-3"
-        >
-          <path
-            d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
-            fill="currentColor"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          ></path>
-        </svg>
-      </a>
-    </Magnetic>
-  )
-}
-
-export default function Personal() {
-  return (
-    <motion.main
-      className="space-y-24"
-      variants={VARIANTS_CONTAINER}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
-          </p>
-        </div>
-      </motion.section>
-
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
-              </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
+    <main id="main-content">
+      <section id="home" className="hero" aria-labelledby="hero-title">
+        <div className="wrap">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <p className="hero-role">Eric Appiah Owusu / IT professional &amp; software engineer</p>
+              <h1 id="hero-title" className="display"><span>Secure.</span><span>Automate.</span><span className="accent-word">Build.</span></h1>
+              <div className="hero-stroke" aria-hidden="true" />
+              <p className="hero-description">I build, automate, and support modern digital systems—from Microsoft cloud and identity management to full-stack applications.</p>
+              <div className="hero-ctas">
+                <a className="btn" href="#projects">View my work <ArrowUpRight size={16} aria-hidden="true" /></a>
+                <a className="btn btn-outline" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer"><Github size={16} aria-hidden="true" /> GitHub</a>
+                <a className="btn btn-outline" href="#contact">Contact me <ArrowRight size={16} aria-hidden="true" /></a>
               </div>
             </div>
-          ))}
+            <div className="hero-portrait" aria-label="Portrait of Eric Appiah Owusu">
+              <div className="hero-red" aria-hidden="true" />
+              <Image src={profilePhoto} alt="Eric Appiah Owusu" fill priority sizes="(max-width: 800px) 100vw, 46vw" />
+              <span className="hero-side">Cloud / Identity / Engineering</span>
+            </div>
+          </div>
+          <div className="hero-foot"><span>Based in Ghana · Working across cloud &amp; code</span><span>Scroll to explore ↓</span></div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
-        <div className="flex flex-col space-y-2">
-          {WORK_EXPERIENCE.map((job) => (
-            <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={job.id}
-            >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
-                    </p>
-                  </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.start} - {job.end}
-                  </p>
-                </div>
+      <section id="about" className="section" aria-labelledby="about-title">
+        <div className="wrap about-grid">
+          <div>
+            <p className="eyebrow">About me</p>
+            <h2 id="about-title" className="about-heading">Technology should make work simpler, safer, and more useful.</h2>
+            <div className="about-copy">
+              <p>I work across enterprise IT and software engineering. My foundation in Microsoft 365 support and identity management informs the applications and automation I build today.</p>
+              <p>I care about clear systems: access that is governed, workflows that remove friction, and products people can actually use.</p>
+            </div>
+          </div>
+          <div className="about-aside">
+            <strong>IT × CODE</strong>
+            <p>One practice connecting administration, security, cloud operations, automation, and product development.</p>
+            <div className="domain-list"><span>Microsoft 365</span><span>Identity &amp; access</span><span>Automation</span><span>Cloud &amp; DevOps</span><span>Full-stack web</span><span>Technical support</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="section experience" aria-labelledby="experience-title">
+        <div className="wrap experience-grid">
+          <div className="experience-intro">
+            <p className="eyebrow">Experience</p>
+            <h2 id="experience-title" className="display section-title">A connected path.</h2>
+            <p className="muted">From supporting Microsoft environments to building and shipping software.</p>
+          </div>
+          <div>
+            {[...EXPERIENCE].reverse().map((entry, index) => (
+              <div className="experience-row" key={entry.id}>
+                <span className="experience-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <div><h3>{entry.role}</h3><p>{entry.detail}</p><small>{entry.focus}</small></div>
               </div>
-            </a>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
-        <div className="flex flex-col space-y-0">
-          <AnimatedBackground
-            enableHover
-            className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
-            transition={{
-              type: 'spring',
-              bounce: 0,
-              duration: 0.2,
-            }}
-          >
-            {BLOG_POSTS.map((post) => (
-              <Link
-                key={post.uid}
-                className="-mx-3 rounded-xl px-3 py-3"
-                href={post.link}
-                data-id={post.uid}
-              >
-                <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
-                  </h4>
-                  <p className="text-zinc-500 dark:text-zinc-400">
-                    {post.description}
-                  </p>
-                </div>
-              </Link>
             ))}
-          </AnimatedBackground>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Connect</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-          Feel free to contact me at{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
-            {EMAIL}
-          </a>
-        </p>
-        <div className="flex items-center justify-start space-x-3">
-          {SOCIAL_LINKS.map((link) => (
-            <MagneticSocialLink key={link.label} link={link.link}>
-              {link.label}
-            </MagneticSocialLink>
-          ))}
+      <section id="certification" className="section certification" aria-labelledby="cert-title">
+        <div className="wrap cert-grid">
+          <div><p className="eyebrow">Certification / Microsoft</p><h2 id="cert-title" className="display">Identity.<br /><span>Access.</span><br />Trust.</h2></div>
+          <div className="cert-detail"><strong>{CERTIFICATIONS[0].name}</strong><p>A dedicated Microsoft identity and access management credential supporting my work in authentication, access, and governance.</p><span className="eyebrow">Microsoft · IAM</span></div>
         </div>
-      </motion.section>
-    </motion.main>
+      </section>
+
+      <section id="projects" className="section" aria-labelledby="projects-title">
+        <div className="wrap">
+          <div className="section-top"><div><p className="eyebrow">Selected work</p><h2 id="projects-title" className="display section-title">Projects with purpose.</h2></div><p className="projects-intro">Products and tools at the intersection of business needs, thoughtful engineering, and reliable delivery.</p></div>
+          {featured.map((project, index) => (
+            <article className={`project-feature ${index % 2 ? 'reverse' : ''}`} key={project.id}>
+              <div className={`project-art ${project.id}`} role="img" aria-label={`${project.name} typographic project visual`}>
+                <div className="project-art-inner"><span className="art-kicker">Selected project / {String(index + 1).padStart(2, '0')}</span><strong className="art-name">{project.name}</strong><span className="art-bottom"><span>{project.role}</span><ArrowDownRight size={24} aria-hidden="true" /></span></div>
+              </div>
+              <div className="project-info"><span className="project-index">{String(index + 1).padStart(2, '0')} / 03</span><h3>{project.name}</h3><p>{project.description}</p><div className="project-meta">{project.tech?.map((tech) => <span key={tech}>{tech}</span>)}</div><div className="project-links">{project.github && <ExternalLink href={project.github}>View repository</ExternalLink>}{project.live && <ExternalLink href={project.live}>View site</ExternalLink>}{!project.github && <span className="muted">Private project</span>}</div></div>
+            </article>
+          ))}
+          {other.length > 0 && <div className="project-other">{other.map((project) => <article className="other-item" key={project.id}><p className="eyebrow">More work</p><h3>{project.name}</h3><p>{project.description}</p><div className="project-links">{project.github && <ExternalLink href={project.github}>Repository</ExternalLink>}{project.live && <ExternalLink href={project.live}>Live site</ExternalLink>}</div></article>)}</div>}
+        </div>
+      </section>
+
+      <section id="skills" className="section skills" aria-labelledby="skills-title"><div className="wrap"><div className="section-top"><div><p className="eyebrow">Capabilities</p><h2 id="skills-title" className="display section-title">Tools of the trade.</h2></div><p className="projects-intro">A practical stack spanning Microsoft enterprise systems and modern web development.</p></div><div className="skills-grid">{SKILL_GROUPS.map((group) => <div className="skill-group" key={group.name}><h3>{group.name}</h3><div className="skill-tags">{group.skills.map((skill) => <span key={skill}>{skill}</span>)}</div></div>)}</div></div></section>
+
+      <section className="wrap" aria-labelledby="github-title"><div className="github-band"><div><p className="eyebrow">Open work</p><h2 id="github-title" className="display">Explore the code.</h2><p>Selected public repositories, experiments, and the work behind the projects above are available on GitHub.</p></div><a className="btn" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer">Visit GitHub <ArrowUpRight size={17} aria-hidden="true" /></a></div></section>
+
+      <section id="contact" className="section contact" aria-labelledby="contact-title"><div className="wrap contact-grid"><div><p className="eyebrow">Contact</p><h2 id="contact-title" className="display"><span>Let’s make</span><span>it work.</span></h2></div><div><p>Have a role, collaboration, or technical challenge in mind? Get in touch and tell me what you’re working on.</p><a className="btn" href="https://www.linkedin.com/in/eric-owusu-66b2b0256/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a></div></div></section>
+    </main>
   )
 }
