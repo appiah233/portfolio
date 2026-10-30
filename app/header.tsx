@@ -5,9 +5,9 @@ import { Menu, Moon, Sun, X, ArrowUpRight } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 const links = [
-  ['home', 'Home'], ['about', 'About'], ['experience', 'Experience'],
+  ['home', 'Home'], ['about', 'About'],
   ['projects', 'Projects'], ['certification', 'Certification'],
-  ['skills', 'Skills'], ['contact', 'Contact'],
+  ['skills', 'Skills'], ['services', 'Hire Me'], ['booking', 'Book a Meeting'],
 ] as const
 
 export function Header() {
@@ -39,7 +39,7 @@ export function Header() {
         <nav className="desktop-nav" aria-label="Main navigation">{links.map(([id, label]) => <a className="nav-link" href={`#${id}`} key={id} aria-current={active === id ? 'location' : undefined}>{label}</a>)}</nav>
         <div className="header-actions">
           <button className="icon-button" type="button" onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')} aria-label={mounted ? `Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} theme` : 'Switch theme'}>{mounted && resolvedTheme === 'dark' ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}</button>
-          <a className="btn header-cta" href="#contact">Let’s talk <ArrowUpRight size={15} aria-hidden="true" /></a>
+          <a className="btn header-cta" href="#services">Hire me <ArrowUpRight size={15} aria-hidden="true" /></a>
           <button className="icon-button mobile-toggle" type="button" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-navigation">{open ? <X size={19} aria-hidden="true" /> : <Menu size={19} aria-hidden="true" />}</button>
         </div>
       </div>

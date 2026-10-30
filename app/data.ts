@@ -80,6 +80,23 @@ export const PROJECTS: Project[] = [
     live: 'https://appiah233.github.io/SC-100/',
     tech: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
   },
+  {
+    name: 'Windows 10 VPS',
+    description: 'A shell script that starts a Windows 10 virtual machine with QEMU and exposes Remote Desktop access through an ngrok tunnel.',
+    id: 'windows-10-vps',
+    featured: false,
+    role: 'Infrastructure scripting',
+    github: 'https://github.com/appiah233/Windows-10-VPS',
+    tech: ['Shell', 'QEMU', 'ngrok', 'RDP'],
+  },
+  {
+    name: 'Medical App',
+    description: 'A staff medical claims application covering requests, approval routing, balances, approved hospitals, insurance plans, dependents and records.',
+    id: 'medical-app',
+    featured: false,
+    role: 'Application development',
+    tech: ['React', 'TypeScript', 'Azure SQL', 'Azure Storage'],
+  },
 ]
 
 export const CERTIFICATIONS: Certification[] = [
@@ -113,9 +130,9 @@ export const EXPERIENCE: Experience[] = [
   {
     period: 'Cloud & DevOps',
     role: 'Cloud Infrastructure & CI/CD',
-    focus: 'Vercel \u2022 GitHub \u2022 Git \u2022 CI/CD \u2022 Deployment Automation',
+    focus: 'Vercel \u2022 GitHub \u2022 Git \u2022 CI/CD \u2022 GitLab Auto DevOps',
     detail:
-      'Deploying and maintaining applications on cloud platforms with reliable CI/CD pipelines.',
+      'Working with teams through GitHub collaboration, Git workflows, and automated deployment pipelines.',
     id: 'exp-cloud-devops',
   },
   {
@@ -160,12 +177,20 @@ export const SKILL_GROUPS: SkillGroup[] = [
     skills: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Node.js'],
   },
   {
+    name: 'AI agents',
+    skills: ['AI agent development', 'Conversational assistants', 'Agent workflow design', 'Tool and API integration'],
+  },
+  {
     name: 'Data',
     skills: ['PostgreSQL', 'Prisma', 'Supabase'],
   },
   {
     name: 'Cloud / DevOps',
-    skills: ['Vercel', 'Git', 'GitHub', 'CI/CD'],
+    skills: ['Vercel', 'Git', 'GitHub collaboration', 'GitLab Auto DevOps', 'CI/CD'],
+  },
+  {
+    name: 'Team collaboration',
+    skills: ['Slack', 'Microsoft Teams', 'GitHub', 'Git workflows'],
   },
 ]
 
@@ -179,3 +204,38 @@ export const CONTACT_LINKS: SocialLink[] = [
     link: 'https://github.com/appiah233/',
   },
 ]
+
+export const SERVICES = [
+  {
+    name: 'AI agent development',
+    description: 'Create AI agents that help people find information, handle routine tasks, and connect business workflows through useful tools and integrations.',
+    deliverables: ['Custom AI agents and conversational assistants', 'Tool and API integrations', 'Agent workflow design and handover'],
+  },
+  {
+    name: 'Microsoft 365 & IT support',
+    description: 'Practical support for the Microsoft tools your team depends on, from user administration to Exchange Online troubleshooting.',
+    deliverables: ['Microsoft 365 administration', 'Email and account troubleshooting', 'User onboarding and technical support'],
+  },
+  {
+    name: 'Identity & access management',
+    description: 'Help managing who can access your systems, with a focus on Microsoft Entra, authentication, and identity governance.',
+    deliverables: ['Identity and access reviews', 'User access administration', 'Authentication and governance support'],
+  },
+  {
+    name: 'Workflow automation',
+    description: 'Turn repetitive business tasks into clearer, more consistent workflows using Power Automate and Microsoft 365.',
+    deliverables: ['Workflow discovery', 'Approval and notification flows', 'Process documentation and handover'],
+  },
+  {
+    name: 'Web application development',
+    description: 'Build practical web experiences for your business, from a professional profile to a storefront or internal application.',
+    deliverables: ['React and Next.js development', 'Database and application integration', 'Deployment and ongoing improvements'],
+  },
+]
+
+// Public contact details; a scheduling page can be added when available.
+export const CONTACT = {
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'eric@esolutionsghana.com',
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
+  linkedin: 'https://www.linkedin.com/in/eric-owusu-66b2b0256/',
+}
