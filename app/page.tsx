@@ -15,7 +15,7 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 
 export default function Page() {
   return (
-    <main id="main-content">
+    <main id="main-content" tabIndex={-1}>
       <section id="home" className="hero" aria-labelledby="hero-title">
         <div className="wrap">
           <div className="hero-grid">
