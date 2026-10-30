@@ -23,13 +23,13 @@ export default function Page() {
               <p className="hero-role">Eric Appiah Owusu / IT professional &amp; software engineer</p>
               <h1 id="hero-title" className="display"><span>Secure.</span><span>Automate.</span><span className="accent-word">Build.</span></h1>
               <div className="hero-stroke" aria-hidden="true" />
-              <p className="hero-description">I’m Eric Appiah Owusu, an IT professional and software engineer based in Ghana. I help teams manage Microsoft 365, strengthen identity and access, automate everyday work, and build practical web applications.</p>
+              <p className="hero-description">I’m Eric Appiah Owusu, an IT professional and software engineer based in Ghana. I help teams manage Microsoft 365, strengthen identity and access, automate everyday work, and build AI agents and practical web applications.</p>
               <div className="hero-ctas">
                 <a className="btn" href="#services">Hire me <ArrowUpRight size={16} aria-hidden="true" /></a>
                 <a className="btn btn-outline" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer"><BrandIcon brand="GitHub" size={16} /> GitHub</a>
                 <a className="btn btn-outline" href="#booking">Book a consultation <ArrowRight size={16} aria-hidden="true" /></a>
               </div>
-              <p className="hero-specialties">Microsoft 365 · Identity &amp; access · Power Automate · Full-stack development</p>
+              <p className="hero-specialties">Microsoft 365 · Identity &amp; access · Power Automate · AI agents · Full-stack development</p>
               <SocialLinks />
             </div>
             <HeroPortrait />
@@ -44,14 +44,14 @@ export default function Page() {
             <p className="eyebrow">About me</p>
             <h2 id="about-title" className="about-heading">Technology should make work simpler, safer, and more useful.</h2>
             <div className="about-copy">
-              <p>My work connects enterprise IT with software engineering. I bring experience in Microsoft 365 administration, Exchange Online support, identity and access management, and workflow automation to the applications I build.</p>
+              <p>My work connects enterprise IT with software engineering. I bring experience in Microsoft 365 administration, Exchange Online support, identity and access management, and workflow automation to the applications and AI agents I build.</p>
               <p>My Microsoft identity and access management certification supports a practical approach to secure, useful systems. Whether you need help with an existing Microsoft environment or a new web application, I start with the problem, agree on the scope, and build toward a clear outcome.</p>
             </div>
           </div>
           <div className="about-aside">
             <strong>IT × CODE</strong>
             <p>One practice connecting administration, security, cloud operations, automation, and product development.</p>
-            <div className="domain-list"><span>Microsoft 365</span><span>Identity &amp; access</span><span>Automation</span><span>Cloud &amp; DevOps</span><span>Full-stack web</span><span>Technical support</span></div>
+            <div className="domain-list"><span>Microsoft 365</span><span>Identity &amp; access</span><span>Automation &amp; AI agents</span><span>Cloud &amp; DevOps</span><span>Full-stack web</span><span>Technical support</span></div>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function Page() {
 
       <section id="services" className="section services" aria-labelledby="services-title">
         <div className="wrap">
-          <div className="section-top"><div><p className="eyebrow">Services / Hire me</p><h2 id="services-title" className="display section-title">Your next step,<br />made practical.</h2></div><p className="projects-intro">Need hands-on technical support, a workflow that saves time, or an application built around your business? Let’s discuss the work and agree on a focused scope.</p></div>
+          <div className="section-top"><div><p className="eyebrow">Services / Hire me</p><h2 id="services-title" className="display section-title">Your next step,<br />made practical.</h2></div><p className="projects-intro">Need hands-on technical support, a workflow that saves time, an AI agent, or an application built around your business? Let’s discuss the work and agree on a focused scope.</p></div>
           <div className="services-grid">{SERVICES.map((service, index) => <article className="service-card" key={service.name}><span className="service-number">0{index + 1}</span><h3>{service.name}</h3><p>{service.description}</p><ul>{service.deliverables.map((item) => <li key={item}>{item}</li>)}</ul><a className="text-link" href="#booking">Discuss this service <ArrowUpRight size={16} aria-hidden="true" /></a></article>)}</div>
           <div className="work-together"><strong>How we’ll work together</strong><ol><li><span>01</span> Share your challenge and goals.</li><li><span>02</span> Agree on scope, timing, and next steps.</li><li><span>03</span> Build, review, and hand over the work.</li></ol></div>
         </div>
@@ -110,7 +110,7 @@ export default function Page() {
 
       <section id="booking" className="section booking" aria-labelledby="booking-title">
         <div className="wrap booking-grid">
-          <div className="booking-intro"><p className="eyebrow">Book a meeting</p><h2 id="booking-title" className="display section-title">Let’s talk<br />through it.</h2><p>A focused conversation about your Microsoft environment, an automation idea, or a web application. Share the challenge and we’ll work out a useful next step.</p><p>Based in Ghana · GMT / UTC+0 · Remote consultations</p></div>
+          <div className="booking-intro"><p className="eyebrow">Book a meeting</p><h2 id="booking-title" className="display section-title">Let’s talk<br />through it.</h2><p>A focused conversation about your Microsoft environment, an automation idea, an AI agent, or a web application. Share the challenge and we’ll work out a useful next step.</p><p>Based in Ghana · GMT / UTC+0 · Remote consultations</p></div>
           <div className="booking-details"><h3>{CONTACT.bookingUrl ? 'Choose a meeting time' : 'Request a consultation'}</h3><p>{CONTACT.bookingUrl ? 'Use my booking page to choose an available time and share what you would like to discuss.' : 'Send a meeting request with a little context. We’ll agree on a time directly before the meeting is confirmed.'}</p><ol><li>Tell me your topic and what you want to achieve.</li><li>Suggest two suitable times and include your time zone.</li><li>Include any useful project details or questions.</li></ol><a className="btn" href={CONTACT.bookingUrl || (CONTACT.email ? meetingEmail : CONTACT.linkedin)} target={CONTACT.bookingUrl || !CONTACT.email ? '_blank' : undefined} rel={CONTACT.bookingUrl || !CONTACT.email ? 'noopener noreferrer' : undefined}>{CONTACT.bookingUrl ? 'Book a meeting' : CONTACT.email ? 'Request a meeting by email' : 'Request a meeting on LinkedIn'}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
         </div>
       </section>

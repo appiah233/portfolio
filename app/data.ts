@@ -177,6 +177,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
     skills: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Node.js'],
   },
   {
+    name: 'AI agents',
+    skills: ['AI agent development', 'Conversational assistants', 'Agent workflow design', 'Tool and API integration'],
+  },
+  {
     name: 'Data',
     skills: ['PostgreSQL', 'Prisma', 'Supabase'],
   },
@@ -202,6 +206,11 @@ export const CONTACT_LINKS: SocialLink[] = [
 ]
 
 export const SERVICES = [
+  {
+    name: 'AI agent development',
+    description: 'Create AI agents that help people find information, handle routine tasks, and connect business workflows through useful tools and integrations.',
+    deliverables: ['Custom AI agents and conversational assistants', 'Tool and API integrations', 'Agent workflow design and handover'],
+  },
   {
     name: 'Microsoft 365 & IT support',
     description: 'Practical support for the Microsoft tools your team depends on, from user administration to Exchange Online troubleshooting.',
