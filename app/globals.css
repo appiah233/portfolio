@@ -146,3 +146,30 @@ button,a{touch-action:manipulation}
 .footer .social-links a:hover{background:var(--paper);color:var(--ink)}
 .social-links a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 .brand-icon{object-fit:contain;flex-shrink:0}.social-links a,.footer .social-links a{background:#fff;color:#101010;border-color:#d9d7d1}.social-links a:hover,.footer .social-links a:hover{background:#fff;color:#101010;border-color:var(--accent)}.btn .brand-icon{background:#fff;border-radius:2px}
+
+.hero-specialties{font-size:11px;font-weight:700;line-height:1.8;text-transform:uppercase;letter-spacing:.07em;margin:24px 0 0;max-width:440px;color:var(--muted)}
+.experience-area{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cert-detail h3{font-size:clamp(24px,2.7vw,38px);line-height:1.15;margin:18px 0}
+.project-status{display:block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:14px}
+.services{background:var(--soft)}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.service-card{background:var(--paper);padding:clamp(24px,3vw,42px);border-top:4px solid var(--ink);display:flex;flex-direction:column;align-items:flex-start}
+.service-number{font-family:var(--font-display);font-size:28px;color:var(--accent)}
+.service-card h3{font-size:clamp(24px,2.8vw,36px);line-height:1.1;letter-spacing:-.03em;margin:20px 0 14px}
+.service-card p{color:var(--muted);line-height:1.7;margin:0}
+.service-card ul{padding-left:20px;font-size:14px;line-height:1.9;margin:22px 0 30px}
+.service-card .text-link{margin-top:auto}
+.work-together{border-top:1px solid var(--line);margin-top:40px;padding-top:26px}
+.work-together strong{font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.work-together ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;line-height:1.6}
+.work-together li span{display:block;font-family:var(--font-display);font-size:30px;color:var(--accent);margin:10px 0}
+.booking{border-top:1px solid var(--line)}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:start}
+.booking-intro p{max-width:460px;line-height:1.7;color:var(--muted)}
+.booking-details{padding:30px;background:var(--soft);border-top:4px solid var(--accent)}
+.booking-details h3{margin:0 0 14px;font-size:24px}
+.booking-details p{line-height:1.7;color:var(--muted)}
+.booking-details ol{padding-left:20px;line-height:1.9;margin-bottom:26px}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.contact-email{display:inline-block;font-size:clamp(16px,2vw,23px);word-break:break-word;border-bottom:1px solid currentColor;margin:8px 0 18px}
+@media(max-width:800px){.services-grid,.booking-grid{grid-template-columns:1fr}.booking-grid{gap:30px}.work-together ol{grid-template-columns:1fr;gap:8px}.work-together li span{display:inline-block;margin-right:12px}.booking-details{padding:24px}.github-band{grid-template-columns:1fr}}

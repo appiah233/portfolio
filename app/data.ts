@@ -200,3 +200,33 @@ export const CONTACT_LINKS: SocialLink[] = [
     link: 'https://github.com/appiah233/',
   },
 ]
+
+export const SERVICES = [
+  {
+    name: 'Microsoft 365 & IT support',
+    description: 'Practical support for the Microsoft tools your team depends on, from user administration to Exchange Online troubleshooting.',
+    deliverables: ['Microsoft 365 administration', 'Email and account troubleshooting', 'User onboarding and technical support'],
+  },
+  {
+    name: 'Identity & access management',
+    description: 'Help managing who can access your systems, with a focus on Microsoft Entra, authentication, and identity governance.',
+    deliverables: ['Identity and access reviews', 'User access administration', 'Authentication and governance support'],
+  },
+  {
+    name: 'Workflow automation',
+    description: 'Turn repetitive business tasks into clearer, more consistent workflows using Power Automate and Microsoft 365.',
+    deliverables: ['Workflow discovery', 'Approval and notification flows', 'Process documentation and handover'],
+  },
+  {
+    name: 'Web application development',
+    description: 'Build practical web experiences for your business, from a professional profile to a storefront or internal application.',
+    deliverables: ['React and Next.js development', 'Database and application integration', 'Deployment and ongoing improvements'],
+  },
+]
+
+// Public contact details; a scheduling page can be added when available.
+export const CONTACT = {
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'eric@esolutionsghana.com',
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
+  linkedin: 'https://www.linkedin.com/in/eric-owusu-66b2b0256/',
+}

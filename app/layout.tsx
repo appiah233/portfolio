@@ -8,8 +8,8 @@ export const viewport: Viewport = { width: 'device-width', initialScale: 1, them
 
 export const metadata: Metadata = {
   title: 'Eric Appiah Owusu — IT, Identity & Software Engineering',
-  description: 'Eric Appiah Owusu works across Microsoft 365, identity and access management, automation, cloud, and software engineering.',
-  openGraph: { type: 'website', title: 'Eric Appiah Owusu', description: 'Enterprise IT meets software engineering.' },
+  description: 'Eric Appiah Owusu is an IT professional and software engineer in Ghana. Explore Microsoft 365, identity management, Power Automate, and web development services, certifications, and projects.',
+  openGraph: { type: 'website', title: 'Eric Appiah Owusu', description: 'Microsoft 365, identity and access management, automation, and web development. Explore my work and discuss your next project.' },
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
