@@ -1,6 +1,8 @@
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { CERTIFICATIONS, EXPERIENCE, PROJECTS, SKILL_GROUPS } from './data'
 import { HeroPortrait } from './hero-portrait'
+import { SocialLinks } from './social-links'
+import { BrandIcon } from './brand-icon'
 
 const featured = PROJECTS.filter((project) => project.featured)
 const other = PROJECTS.filter((project) => !project.featured)
@@ -22,9 +24,10 @@ export default function Page() {
               <p className="hero-description">I build, automate, and support modern digital systems—from Microsoft cloud and identity management to full-stack applications.</p>
               <div className="hero-ctas">
                 <a className="btn" href="#projects">View my work <ArrowUpRight size={16} aria-hidden="true" /></a>
-                <a className="btn btn-outline" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer"><Github size={16} aria-hidden="true" /> GitHub</a>
+                <a className="btn btn-outline" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer"><BrandIcon brand="GitHub" size={16} /> GitHub</a>
                 <a className="btn btn-outline" href="#contact">Contact me <ArrowRight size={16} aria-hidden="true" /></a>
               </div>
+              <SocialLinks />
             </div>
             <HeroPortrait />
           </div>
@@ -94,7 +97,7 @@ export default function Page() {
 
       <section className="wrap" aria-labelledby="github-title"><div className="github-band"><div><p className="eyebrow">Open work</p><h2 id="github-title" className="display">Explore the code.</h2><p>Selected public repositories, experiments, and the work behind the projects above are available on GitHub.</p></div><a className="btn" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer">Visit GitHub <ArrowUpRight size={17} aria-hidden="true" /></a></div></section>
 
-      <section id="contact" className="section contact" aria-labelledby="contact-title"><div className="wrap contact-grid"><div><p className="eyebrow">Contact</p><h2 id="contact-title" className="display"><span>Let’s make</span><span>it work.</span></h2></div><div><p>Have a role, collaboration, or technical challenge in mind? Get in touch and tell me what you’re working on.</p><a className="btn" href="https://www.linkedin.com/in/eric-owusu-66b2b0256/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a></div></div></section>
+      <section id="contact" className="section contact" aria-labelledby="contact-title"><div className="wrap contact-grid"><div><p className="eyebrow">Contact</p><h2 id="contact-title" className="display"><span>Let’s make</span><span>it work.</span></h2></div><div><p>Have a role, collaboration, or technical challenge in mind? Get in touch and tell me what you’re working on.</p><a className="btn" href="https://www.linkedin.com/in/eric-owusu-66b2b0256/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a><SocialLinks /></div></div></section>
     </main>
   )
 }
