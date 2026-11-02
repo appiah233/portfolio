@@ -224,7 +224,7 @@ export const SERVICES = [
 
 // Public contact details; a scheduling page can be added when available.
 export const CONTACT = {
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'me@mydomain',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'me@mydomain.com',
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   linkedin: 'https://www.linkedin.com/in/eric-owusu-66b2b0256/',
 }

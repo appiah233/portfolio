@@ -4,6 +4,7 @@ import { HeroPortrait } from './hero-portrait'
 import { SocialLinks } from './social-links'
 import { BrandIcon } from './brand-icon'
 import { SkillIcon } from './skill-icon'
+import { ContactForm } from './contact-form'
 
 const meetingEmail = `mailto:${CONTACT.email}?subject=${encodeURIComponent('Consultation request')}&body=${encodeURIComponent('Hello Eric,\n\nI would like to discuss:\n\nMy goals or project details:\n\nPreferred meeting times (two options):\n\nMy time zone:\n\nMy name and organisation:\n\nThank you.')}`
 
@@ -119,7 +120,7 @@ export default function Page() {
       <section id="contact" className="section contact" aria-labelledby="contact-title">
         <div className="wrap contact-grid">
           <div><p className="eyebrow">Contact / Let’s work together</p><h2 id="contact-title" className="display"><span>Let’s make</span><span>it work.</span></h2></div>
-          <div><p>Looking for an IT professional, a developer, or support with Microsoft technologies? Tell me about your project, consulting needs, or role.</p>{CONTACT.email && <a className="contact-email" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>}<div className="contact-actions"><a className="btn" href={CONTACT.email ? `mailto:${CONTACT.email}?subject=Project%20enquiry` : CONTACT.linkedin} target={CONTACT.email ? undefined : '_blank'} rel={CONTACT.email ? undefined : 'noopener noreferrer'}>{CONTACT.email ? 'Email me' : 'Contact me on LinkedIn'}<ArrowUpRight size={17} aria-hidden="true" /></a><a className="btn" href="#booking">Book a consultation <ArrowRight size={17} aria-hidden="true" /></a></div><SocialLinks /></div>
+          <div><p>Looking for an IT professional, a developer, or support with Microsoft technologies? Tell me about your project, consulting needs, or role.</p>{CONTACT.email && <a className="contact-email" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>}<ContactForm /><div className="contact-actions"><a className="btn" href={CONTACT.email ? `mailto:${CONTACT.email}?subject=Project%20enquiry` : CONTACT.linkedin} target={CONTACT.email ? undefined : '_blank'} rel={CONTACT.email ? undefined : 'noopener noreferrer'}>{CONTACT.email ? 'Email me' : 'Contact me on LinkedIn'}<ArrowUpRight size={17} aria-hidden="true" /></a><a className="btn" href="#booking">Book a consultation <ArrowRight size={17} aria-hidden="true" /></a></div><SocialLinks /></div>
         </div>
       </section>
     </main>
