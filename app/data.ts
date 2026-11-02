@@ -70,17 +70,6 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
   },
   {
-    name: 'SC-100 Study Lab',
-    description: 'A browser-based practice site built from 360 question screenshots, with answer feedback and locally saved progress.',
-    id: 'sc100',
-    featured: false,
-    status: 'live',
-    role: 'Design & development',
-    github: 'https://github.com/appiah233/SC-100',
-    live: 'https://appiah233.github.io/SC-100/',
-    tech: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
-  },
-  {
     name: 'Windows 10 VPS',
     description: 'A shell script that starts a Windows 10 virtual machine with QEMU and exposes Remote Desktop access through an ngrok tunnel.',
     id: 'windows-10-vps',
@@ -235,7 +224,7 @@ export const SERVICES = [
 
 // Public contact details; a scheduling page can be added when available.
 export const CONTACT = {
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'eric@esolutionsghana.com',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'me@mydomain',
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   linkedin: 'https://www.linkedin.com/in/eric-owusu-66b2b0256/',
 }

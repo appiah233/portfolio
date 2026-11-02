@@ -116,7 +116,9 @@ button,a{touch-action:manipulation}
 .skill-group{border-top:1px solid var(--line);padding:25px 0 32px}
 .skill-group h3{font-size:14px;text-transform:uppercase;letter-spacing:.09em;margin:0 0 20px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
-.skill-tags span{padding:8px 12px;border:1px solid var(--line);font-size:12px;font-weight:600}
+.skill-tags>span{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--line);font-size:12px;font-weight:600}
+.skill-logo{width:26px;height:26px;flex-shrink:0;object-fit:contain;box-sizing:border-box;padding:3px;border-radius:4px;background:#fff}
+.skill-symbol{flex-shrink:0;color:var(--ink)}
 .github-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
 .github-band h2{font-size:clamp(35px,5vw,64px);margin:10px 0}
 .github-band p{margin:0;max-width:570px;line-height:1.6;color:var(--muted)}

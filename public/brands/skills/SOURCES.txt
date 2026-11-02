@@ -1,0 +1,1 @@
+Product logos: Devicon (https://github.com/devicons/devicon), Microsoft Fluent UI brand asset CDN, Microsoft Power Platform and Entra icon packs on Microsoft Learn, and dashboard-icons (https://github.com/homarr-labs/dashboard-icons). Logos remain the property of their respective owners. Generic capabilities use Lucide icons.

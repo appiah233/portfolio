@@ -3,6 +3,7 @@ import { CERTIFICATIONS, CONTACT, EXPERIENCE, PROJECTS, SERVICES, SKILL_GROUPS }
 import { HeroPortrait } from './hero-portrait'
 import { SocialLinks } from './social-links'
 import { BrandIcon } from './brand-icon'
+import { SkillIcon } from './skill-icon'
 
 const meetingEmail = `mailto:${CONTACT.email}?subject=${encodeURIComponent('Consultation request')}&body=${encodeURIComponent('Hello Eric,\n\nI would like to discuss:\n\nMy goals or project details:\n\nPreferred meeting times (two options):\n\nMy time zone:\n\nMy name and organisation:\n\nThank you.')}`
 
@@ -104,7 +105,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="skills" className="section skills" aria-labelledby="skills-title"><div className="wrap"><div className="section-top"><div><p className="eyebrow">Capabilities</p><h2 id="skills-title" className="display section-title">Tools of the trade.</h2></div><p className="projects-intro">A practical stack spanning Microsoft enterprise systems and modern web development.</p></div><div className="skills-grid">{SKILL_GROUPS.map((group) => <div className="skill-group" key={group.name}><h3>{group.name}</h3><div className="skill-tags">{group.skills.map((skill) => <span key={skill}>{skill}</span>)}</div></div>)}</div></div></section>
+      <section id="skills" className="section skills" aria-labelledby="skills-title"><div className="wrap"><div className="section-top"><div><p className="eyebrow">Capabilities</p><h2 id="skills-title" className="display section-title">Tools of the trade.</h2></div><p className="projects-intro">A practical stack spanning Microsoft enterprise systems and modern web development.</p></div><div className="skills-grid">{SKILL_GROUPS.map((group) => <div className="skill-group" key={group.name}><h3>{group.name}</h3><div className="skill-tags">{group.skills.map((skill) => <span key={skill}><SkillIcon skill={skill} />{skill}</span>)}</div></div>)}</div></div></section>
 
       <section id="github" className="wrap" aria-labelledby="github-title"><div className="github-band"><div><p className="eyebrow">Open work</p><h2 id="github-title" className="display">Explore the code.</h2><p>Selected public repositories, experiments, and the work behind the projects above are available on GitHub.</p></div><a className="btn" href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer">Visit GitHub <ArrowUpRight size={17} aria-hidden="true" /></a></div></section>
 
