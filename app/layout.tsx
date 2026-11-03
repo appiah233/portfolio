@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from 'next-themes'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -14,5 +15,5 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" suppressHydrationWarning><body><ThemeProvider attribute="class" defaultTheme="system" enableSystem><div className="site-shell"><Header />{children}<Footer /><ScrollToTop /></div></ThemeProvider></body></html>
+  return <html lang="en" suppressHydrationWarning><body><ThemeProvider attribute="class" defaultTheme="system" enableSystem><div className="site-shell"><Header />{children}<Footer /><ScrollToTop /></div></ThemeProvider><Analytics /></body></html>
 }
