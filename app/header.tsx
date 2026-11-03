@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Menu, Moon, Sun, X, ArrowUpRight } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { SiteLogo } from './site-logo'
 
 const links = [
   ['home', 'Home'], ['about', 'About'],
@@ -35,7 +36,7 @@ export function Header() {
     <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:p-3 focus:text-black">Skip to main content</a>
     <header className="site-header">
       <div className="wrap header-inner">
-        <a className="brand" href="#home" aria-label="Eric Appiah Owusu, back to home">Eric Appiah Owusu<span className="brand-dot">●</span></a>
+        <SiteLogo />
         <nav className="desktop-nav" aria-label="Main navigation">{links.map(([id, label]) => <a className="nav-link" href={`#${id}`} key={id} aria-current={active === id ? 'location' : undefined}>{label}</a>)}</nav>
         <div className="header-actions">
           <button className="icon-button" type="button" onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')} aria-label={mounted ? `Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} theme` : 'Switch theme'}>{mounted && resolvedTheme === 'dark' ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}</button>

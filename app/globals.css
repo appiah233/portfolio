@@ -29,6 +29,11 @@ button,a{touch-action:manipulation}
 .btn-outline:hover{color:#fff}
 .brand{font-family:var(--font-display);font-size:24px;line-height:1;letter-spacing:.015em;text-transform:uppercase;white-space:nowrap}
 .brand-dot{color:var(--accent)}
+.site-logo{display:inline-flex;flex-shrink:0;align-items:center;justify-content:center;width:112px;height:52px;background:#f8f7f3;overflow:hidden}
+.site-logo-image{display:block;width:112px;height:52px;object-fit:cover}
+.footer .site-logo{display:inline-flex;width:160px;height:74px;margin:0}
+.footer .site-logo-image{width:160px;height:74px}
+.footer-name{font-weight:800;letter-spacing:.04em}
 .site-header{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(14px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
 .desktop-nav{display:flex;align-items:center;gap:clamp(10px,1.7vw,27px)}
