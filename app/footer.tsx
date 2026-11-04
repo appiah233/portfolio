@@ -7,7 +7,7 @@ export function Footer() {
     <div className="footer-grid">
       <div><SiteLogo /><p className="footer-name">Eric Appiah Owusu</p><p>Enterprise IT, identity, automation, AI agents, and software engineering.</p></div>
       <div><h3>Navigate</h3><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#certification">Certification</a><a href="#skills">Skills</a><a href="#services">Services / Hire Me</a><a href="#booking">Book a meeting</a></div>
-      <div><h3>Connect</h3><a href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/eric-owusu-66b2b0256/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>{CONTACT.email && <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>}<a href="#contact">Contact</a><SocialLinks /></div>
+      <div><h3>Connect</h3><a href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/eric-owusu-66b2b0256/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://x.com/eric0wusu" target="_blank" rel="noopener noreferrer">X ↗</a>{CONTACT.email && <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>}<a href="#contact">Contact</a><SocialLinks /></div>
     </div>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} Eric Appiah Owusu</span><span>Designed to make complexity useful.</span></div>
   </div></footer>

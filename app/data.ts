@@ -105,6 +105,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'GitHub',
     link: 'https://github.com/appiah233/',
   },
+  {
+    label: 'X',
+    link: 'https://x.com/eric0wusu',
+  },
 ]
 
 export const EXPERIENCE: Experience[] = [
