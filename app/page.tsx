@@ -6,8 +6,6 @@ import { BrandIcon } from './brand-icon'
 import { SkillIcon } from './skill-icon'
 import { ContactForm } from './contact-form'
 
-const meetingEmail = `mailto:${CONTACT.email}?subject=${encodeURIComponent('Consultation request')}&body=${encodeURIComponent('Hello Eric,\n\nI would like to discuss:\n\nMy goals or project details:\n\nPreferred meeting times (two options):\n\nMy time zone:\n\nMy name and organisation:\n\nThank you.')}`
-
 const featured = PROJECTS.filter((project) => project.featured)
 const other = PROJECTS.filter((project) => !project.featured)
 
@@ -113,14 +111,14 @@ export default function Page() {
       <section id="booking" className="section booking" aria-labelledby="booking-title">
         <div className="wrap booking-grid">
           <div className="booking-intro"><p className="eyebrow">Book a meeting</p><h2 id="booking-title" className="display section-title">Let’s talk<br />through it.</h2><p>A focused conversation about your Microsoft environment, an automation idea, an AI agent, or a web application. Share the challenge and we’ll work out a useful next step.</p><p>Based in Ghana · GMT / UTC+0 · Remote consultations</p></div>
-          <div className="booking-details"><h3>{CONTACT.bookingUrl ? 'Choose a meeting time' : 'Request a consultation'}</h3><p>{CONTACT.bookingUrl ? 'Use my booking page to choose an available time and share what you would like to discuss.' : 'Send a meeting request with a little context. We’ll agree on a time directly before the meeting is confirmed.'}</p><ol><li>Tell me your topic and what you want to achieve.</li><li>Suggest two suitable times and include your time zone.</li><li>Include any useful project details or questions.</li></ol><a className="btn" href={CONTACT.bookingUrl || (CONTACT.email ? meetingEmail : CONTACT.linkedin)} target={CONTACT.bookingUrl || !CONTACT.email ? '_blank' : undefined} rel={CONTACT.bookingUrl || !CONTACT.email ? 'noopener noreferrer' : undefined}>{CONTACT.bookingUrl ? 'Book a meeting' : CONTACT.email ? 'Request a meeting by email' : 'Request a meeting on LinkedIn'}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
+          <div className="booking-details"><h3>{CONTACT.bookingUrl ? 'Choose a meeting time' : 'Request a consultation'}</h3><p>{CONTACT.bookingUrl ? 'Use my booking page to choose an available time and share what you would like to discuss.' : 'Send a meeting request with a little context. We’ll agree on a time directly before the meeting is confirmed.'}</p><ol><li>Tell me your topic and what you want to achieve.</li><li>Suggest two suitable times and include your time zone.</li><li>Include any useful project details or questions.</li></ol><a className="btn" href={CONTACT.bookingUrl || '#contact-form'} target={CONTACT.bookingUrl ? '_blank' : undefined} rel={CONTACT.bookingUrl ? 'noopener noreferrer' : undefined}>{CONTACT.bookingUrl ? 'Book a meeting' : 'Request a meeting'}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
         </div>
       </section>
 
       <section id="contact" className="section contact" aria-labelledby="contact-title">
         <div className="wrap contact-grid">
           <div><p className="eyebrow">Contact / Let’s work together</p><h2 id="contact-title" className="display"><span>Let’s make</span><span>it work.</span></h2></div>
-          <div><p>Looking for an IT professional, a developer, or support with Microsoft technologies? Tell me about your project, consulting needs, or role.</p>{CONTACT.email && <a className="contact-email" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>}<ContactForm /><div className="contact-actions"><a className="btn" href={CONTACT.email ? `mailto:${CONTACT.email}?subject=Project%20enquiry` : CONTACT.linkedin} target={CONTACT.email ? undefined : '_blank'} rel={CONTACT.email ? undefined : 'noopener noreferrer'}>{CONTACT.email ? 'Email me' : 'Contact me on LinkedIn'}<ArrowUpRight size={17} aria-hidden="true" /></a><a className="btn" href="#booking">Book a consultation <ArrowRight size={17} aria-hidden="true" /></a></div><SocialLinks /></div>
+          <div><p>Looking for an IT professional, a developer, or support with Microsoft technologies? Tell me about your project, consulting needs, or role.</p><ContactForm /><div className="contact-actions"><a className="btn" href="#contact-form">Contact me <ArrowUpRight size={17} aria-hidden="true" /></a><a className="btn" href="#booking">Book a consultation <ArrowRight size={17} aria-hidden="true" /></a></div><SocialLinks /></div>
         </div>
       </section>
     </main>

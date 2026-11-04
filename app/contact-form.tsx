@@ -11,7 +11,7 @@ function ContactFields() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} aria-label="Send a message" aria-busy={state.submitting}>
+    <form id="contact-form" className="contact-form" onSubmit={handleSubmit} aria-label="Send a message" aria-busy={state.submitting}>
       <div className="contact-form-row">
         <div><label htmlFor="contact-name">Your name</label><input id="contact-name" name="name" autoComplete="name" required maxLength={120} /><ValidationError prefix="Name" field="name" errors={state.errors} /></div>
         <div><label htmlFor="contact-email">Email address</label><input id="contact-email" type="email" name="email" autoComplete="email" required maxLength={254} /><ValidationError prefix="Email" field="email" errors={state.errors} /></div>
