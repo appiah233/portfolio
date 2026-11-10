@@ -196,6 +196,10 @@ export const CONTACT_LINKS: SocialLink[] = [
     label: 'GitHub',
     link: 'https://github.com/appiah233/',
   },
+  {
+    label: 'X',
+    link: 'https://x.com/eric0wusu',
+  },
 ]
 
 export const SERVICES = [
@@ -226,9 +230,9 @@ export const SERVICES = [
   },
 ]
 
-// Public contact details; a scheduling page can be added when available.
+// Public contact details
 export const CONTACT = {
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || '',
+  email: 'info@ericappiah.com',
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   linkedin: 'https://www.linkedin.com/in/eric-owusu-66b2b0256/',
 }
