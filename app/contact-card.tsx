@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Copy, Check, MapPin } from 'lucide-react'
+import { Mail, Copy, Check, MapPin, Sparkles } from 'lucide-react'
 import { CONTACT } from './data'
 import { SocialLinks } from './social-links'
 
