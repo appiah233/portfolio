@@ -9,11 +9,11 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-top-banner">
           <div>
-            <span className="footer-banner-eyebrow">Available for new opportunities</span>
+            <span className="footer-banner-eyebrow">Project enquiries</span>
             <h3 className="footer-banner-title">Let’s start a conversation.</h3>
           </div>
-          <a className="btn footer-cta-btn" href={`mailto:${CONTACT.email}`}>
-            <Mail size={16} aria-hidden="true" /> {CONTACT.email} <ArrowUpRight size={16} aria-hidden="true" />
+          <a className="btn footer-cta-btn" href="#contact">
+            Get in touch <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
 
@@ -39,7 +39,7 @@ export function Footer() {
           <div>
             <h3>Connect</h3>
             <a href={`mailto:${CONTACT.email}`} className="footer-email-link">
-              <Mail size={14} aria-hidden="true" /> {CONTACT.email}
+              <Mail size={14} aria-hidden="true" /> Email
             </a>
             <a href="https://github.com/appiah233" target="_blank" rel="noopener noreferrer">
               GitHub ↗

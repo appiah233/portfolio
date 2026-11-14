@@ -1,10 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Menu, Moon, Sun, X, Mail } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { SiteLogo } from './site-logo'
-import { CONTACT } from './data'
 
 const links = [
   ['home', 'Home'],
@@ -73,9 +72,7 @@ export function Header() {
                 <Moon size={17} aria-hidden="true" />
               )}
             </button>
-            <a className="btn header-cta" href={`mailto:${CONTACT.email}`}>
-              <Mail size={14} aria-hidden="true" /> {CONTACT.email}
-            </a>
+            <a className="btn header-cta" href="#contact">Get in touch</a>
             <button
               className="icon-button mobile-toggle"
               type="button"

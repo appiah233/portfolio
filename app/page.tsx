@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Mail } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { CERTIFICATIONS, CONTACT, EXPERIENCE, PROJECTS, SERVICES, SKILL_GROUPS } from './data'
 import { HeroPortrait } from './hero-portrait'
 import { SocialLinks } from './social-links'
@@ -27,7 +27,7 @@ export default function Page() {
             <div className="hero-copy">
               <div className="hero-badge">
                 <span className="status-dot" aria-hidden="true" />
-                <span>Available for IT consulting &amp; engineering projects</span>
+                <span>IT consulting &amp; software engineering</span>
               </div>
               <p className="hero-role">Eric Appiah Owusu / IT professional &amp; software engineer</p>
               <h1 id="hero-title" className="display">
@@ -39,8 +39,8 @@ export default function Page() {
                 I’m Eric Appiah Owusu, an IT professional and software engineer based in Ghana. I help teams manage Microsoft 365, strengthen identity and access, automate everyday work, and build AI agents and practical web applications.
               </p>
               <div className="hero-ctas">
-                <a className="btn btn-primary" href={`mailto:${CONTACT.email}`}>
-                  <Mail size={16} aria-hidden="true" /> Get in touch ({CONTACT.email})
+                <a className="btn btn-primary" href="#contact">
+                  Discuss a project <ArrowUpRight size={16} aria-hidden="true" />
                 </a>
                 <a className="btn btn-outline" href="#services">
                   Explore services <ArrowRight size={16} aria-hidden="true" />
@@ -201,7 +201,7 @@ export default function Page() {
         <div className="wrap">
           <div className="section-top">
             <div>
-              <p className="eyebrow">Services / Hire me</p>
+              <p className="eyebrow">Services / Work together</p>
               <h2 id="services-title" className="display section-title">Your next step,<br />made practical.</h2>
             </div>
             <p className="projects-intro">Need hands-on technical support, a workflow that saves time, an AI agent, or an application built around your business? Let’s discuss the work and agree on a focused scope.</p>
@@ -290,7 +290,7 @@ export default function Page() {
             <p>
               {CONTACT.bookingUrl
                 ? 'Use my booking page to choose an available time and share what you would like to discuss.'
-                : 'Send a meeting request directly via email. We’ll agree on a time directly and receive a calendar invitation.'}
+                : 'Share a little context and a couple of suitable times. We’ll confirm the details by email.'}
             </p>
             <ol>
               <li>Tell me your topic and what you want to achieve.</li>
@@ -303,7 +303,7 @@ export default function Page() {
               target={CONTACT.bookingUrl ? '_blank' : undefined}
               rel={CONTACT.bookingUrl ? 'noopener noreferrer' : undefined}
             >
-              {CONTACT.bookingUrl ? 'Book a meeting' : `Email: ${CONTACT.email}`}
+              {CONTACT.bookingUrl ? 'Book a meeting' : 'Request a consultation'}
               <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           </div>
@@ -322,18 +322,7 @@ export default function Page() {
               <p className="contact-main-desc">
                 Looking for an IT professional, a developer, or support with Microsoft technologies? Tell me about your project, consulting needs, or role.
               </p>
-              <div className="contact-quick-info">
-                <div className="quick-info-card">
-                  <strong>Direct Email</strong>
-                  <a href={`mailto:${CONTACT.email}`} className="text-link">
-                    {CONTACT.email}
-                  </a>
-                </div>
-                <div className="quick-info-card">
-                  <strong>Location &amp; Availability</strong>
-                  <p>Accra, Ghana (GMT) · Worldwide remote collaboration</p>
-                </div>
-              </div>
+              <p>Based in Accra, Ghana · Remote collaboration worldwide</p>
             </div>
             <div className="contact-section-card">
               <ContactCard />
