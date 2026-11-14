@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Copy, Check, MapPin, Sparkles } from 'lucide-react'
+import { Mail, Copy, Check, MapPin, BriefcaseBusiness } from 'lucide-react'
 import { CONTACT } from './data'
 import { SocialLinks } from './social-links'
 
@@ -65,7 +65,7 @@ export function ContactCard() {
           <span>Accra, Ghana (GMT / UTC+0) · Remote worldwide</span>
         </div>
         <div className="meta-item">
-          <Sparkles size={16} aria-hidden="true" />
+          <BriefcaseBusiness size={16} aria-hidden="true" />
           <span>Consulting, implementations &amp; contract development</span>
         </div>
       </div>
