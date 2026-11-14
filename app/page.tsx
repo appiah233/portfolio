@@ -36,7 +36,7 @@ export default function Page() {
                 <span className="accent-word">Build.</span>
               </h1>
               <p className="hero-description">
-                I’m Eric Appiah Owusu, an IT professional and software engineer based in Ghana. I help teams manage Microsoft 365, strengthen identity and access, automate everyday work, and build AI agents and practical web applications.
+                I’m Eric Appiah Owusu, an IT professional and software engineer based in Ghana. I work across Microsoft 365, identity, automation, and full-stack applications, with hands-on AWS deployment experience.
               </p>
               <div className="hero-ctas">
                 <a className="btn btn-primary" href="#contact">
@@ -55,7 +55,7 @@ export default function Page() {
                 </a>
               </div>
               <p className="hero-specialties">
-                Microsoft 365 · Identity &amp; access · Power Automate · AI agents · Full-stack development
+                Microsoft 365 · Identity &amp; access · AWS · AI agents · Full-stack development
               </p>
               <SocialLinks />
             </div>

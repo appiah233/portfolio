@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Bot, GitBranch, Headset, MessageSquare, Plug, Workflow } from 'lucide-react'
+import { Bot, CloudCog, Database, GitBranch, Headset, MessageSquare, Plug, Workflow } from 'lucide-react'
 
 const logos: Record<string, string> = {
   'Microsoft 365': 'microsoft365',
@@ -21,6 +21,8 @@ const skillIcons = {
   'Agent workflow design': Workflow,
   'Tool and API integration': Plug,
   'CI/CD': GitBranch,
+  AWS: CloudCog,
+  Neon: Database,
 }
 
 export function SkillIcon({ skill }: { skill: string }) {

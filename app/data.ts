@@ -37,6 +37,18 @@ type SkillGroup = {
 
 export const PROJECTS: Project[] = [
   {
+    name: 'Examination Hub',
+    description:
+      'An online examination platform where teachers create and publish timed multiple-choice exams, and students complete saved attempts with server-side grading. Built with Neon for authentication and data, an AWS deployment pipeline for the API, and Vercel for the frontend.',
+    id: 'examination-hub',
+    featured: true,
+    status: 'live',
+    role: 'Full-stack & cloud engineering',
+    github: 'https://github.com/appiah233/DPCIS',
+    live: 'https://dps-examhub.vercel.app/',
+    tech: ['React', 'FastAPI', 'Neon', 'AWS', 'Vercel'],
+  },
+  {
     name: 'Picksy',
     description:
       'An evidence-led business software discovery platform. Its landing experience and catalogue architecture are in place while editorial research and publication review continue.',
@@ -115,7 +127,7 @@ export const EXPERIENCE: Experience[] = [
   {
     period: 'Present',
     role: 'Software Engineering & Full-Stack Development',
-    focus: 'TypeScript \u2022 Next.js \u2022 React \u2022 Node.js \u2022 PostgreSQL \u2022 Supabase',
+    focus: 'TypeScript \u2022 React \u2022 Next.js \u2022 FastAPI \u2022 PostgreSQL \u2022 Neon',
     detail:
       'Building modern web applications and automating workflows with AI-assisted engineering practices.',
     id: 'exp-software-engineering',
@@ -123,9 +135,9 @@ export const EXPERIENCE: Experience[] = [
   {
     period: 'Cloud & DevOps',
     role: 'Cloud Infrastructure & CI/CD',
-    focus: 'Vercel \u2022 GitHub \u2022 Git \u2022 CI/CD \u2022 GitLab Auto DevOps',
+    focus: 'AWS ECS \u2022 ECR \u2022 CodePipeline \u2022 Docker \u2022 Vercel',
     detail:
-      'Working with teams through GitHub collaboration, Git workflows, and automated deployment pipelines.',
+      'Building and deploying cloud-backed applications with AWS build and delivery services, containerized APIs, Vercel frontends, and automated pipelines.',
     id: 'exp-cloud-devops',
   },
   {
@@ -175,11 +187,11 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     name: 'Data',
-    skills: ['PostgreSQL', 'Prisma', 'Supabase'],
+    skills: ['PostgreSQL', 'Neon', 'Prisma', 'Supabase'],
   },
   {
     name: 'Cloud / DevOps',
-    skills: ['Vercel', 'Git', 'GitHub collaboration', 'GitLab Auto DevOps', 'CI/CD'],
+    skills: ['AWS', 'Vercel', 'Git', 'GitHub collaboration', 'CI/CD'],
   },
   {
     name: 'Team collaboration',
@@ -227,6 +239,11 @@ export const SERVICES = [
     name: 'Web application development',
     description: 'Build practical web experiences for your business, from a professional profile to a storefront or internal application.',
     deliverables: ['React and Next.js development', 'Database and application integration', 'Deployment and ongoing improvements'],
+  },
+  {
+    name: 'Cloud deployment & delivery',
+    description: 'Take applications from code to a maintainable production setup using AWS, Vercel, containers, and automated delivery pipelines.',
+    deliverables: ['AWS application deployment', 'Container build and delivery workflows', 'Deployment monitoring and handover'],
   },
 ]
 

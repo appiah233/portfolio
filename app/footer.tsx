@@ -22,7 +22,7 @@ export function Footer() {
             <SiteLogo />
             <p className="footer-name">Eric Appiah Owusu</p>
             <p className="footer-desc">
-              Enterprise Microsoft 365, Identity &amp; Access Governance, Workflow Automation, and Full-Stack Software Engineering.
+              Microsoft 365, identity, automation, AWS cloud delivery, and full-stack software engineering.
             </p>
           </div>
           <div>
