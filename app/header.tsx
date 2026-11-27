@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { SiteLogo } from './site-logo'
@@ -17,6 +17,7 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const toggle = useRef<HTMLButtonElement>(null)
   const [active, setActive] = useState('home')
   const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
@@ -44,7 +45,16 @@ export function Header() {
       >
         Skip to main content
       </a>
-      <header className="site-header">
+      <header
+        className="site-header"
+        onKeyDown={(event) => {
+          if (open && event.key === 'Escape') {
+            event.preventDefault()
+            setOpen(false)
+            toggle.current?.focus()
+          }
+        }}
+      >
         <div className="wrap header-inner">
           <SiteLogo />
           <nav className="desktop-nav" aria-label="Main navigation">
@@ -75,8 +85,9 @@ export function Header() {
             <a className="btn header-cta" href="#contact">Get in touch</a>
             <button
               className="icon-button mobile-toggle"
+              ref={toggle}
               type="button"
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpen((isOpen) => !isOpen)}
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
               aria-controls="mobile-navigation"
@@ -85,20 +96,30 @@ export function Header() {
             </button>
           </div>
         </div>
-        {open && (
-          <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
-            {links.map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={() => setOpen(false)}
-                aria-current={active === id ? 'location' : undefined}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-        )}
+        <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation" hidden={!open}>
+          {links.map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(event) => {
+                if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+                const target = document.getElementById(id)
+                if (target) {
+                  event.preventDefault()
+                  window.history.pushState(null, '', `#${id}`)
+                  target.setAttribute('tabindex', '-1')
+                  target.focus({ preventScroll: true })
+                  target.scrollIntoView()
+                  setActive(id)
+                }
+                setOpen(false)
+              }}
+              aria-current={active === id ? 'location' : undefined}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
       </header>
     </>
   )

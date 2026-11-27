@@ -344,7 +344,8 @@ button, a {
   display: none;
 }
 
-.mobile-nav {
+.mobile-nav,
+.mobile-nav[hidden] {
   display: none;
 }
 
@@ -1543,6 +1544,8 @@ button, a {
     border-bottom: 1px solid var(--line);
     padding: 16px 24px 22px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
   }
   .mobile-nav a {
     display: block;

@@ -1,21 +1,24 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Mail, Copy, Check, MapPin, BriefcaseBusiness } from 'lucide-react'
 import { CONTACT } from './data'
 import { SocialLinks } from './social-links'
 
 export function ContactCard() {
-  const [copied, setCopied] = useState(false)
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
+  const resetTimer = useRef<number | undefined>(undefined)
+
+  useEffect(() => () => window.clearTimeout(resetTimer.current), [])
 
   const copyEmail = async () => {
+    window.clearTimeout(resetTimer.current)
     try {
       await navigator.clipboard.writeText(CONTACT.email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2500)
+      setCopyStatus('copied')
+      resetTimer.current = window.setTimeout(() => setCopyStatus('idle'), 2500)
     } catch {
-      // Fallback
-      setCopied(false)
+      setCopyStatus('failed')
     }
   }
 
@@ -24,11 +27,11 @@ export function ContactCard() {
       <div className="contact-card-header">
         <div className="contact-badge">
           <span className="contact-pulse" aria-hidden="true" />
-          <span>Project enquiries</span>
+          <span>Work &amp; project enquiries</span>
         </div>
-        <h3 className="contact-card-title">Let’s discuss your next project.</h3>
+        <h3 className="contact-card-title">Let’s talk about working together.</h3>
         <p className="contact-card-subtitle">
-          For Microsoft 365, identity and access, automation, or application development, share a brief outline of what you need.
+          For hiring or project enquiries about Microsoft 365, identity and access, automation, or application development, email me a brief outline.
         </p>
       </div>
 
@@ -45,9 +48,8 @@ export function ContactCard() {
           type="button"
           className="btn btn-outline"
           onClick={copyEmail}
-          aria-label="Copy email address to clipboard"
         >
-          {copied ? (
+          {copyStatus === 'copied' ? (
             <>
               <Check size={16} aria-hidden="true" /> Copied!
             </>
@@ -57,6 +59,9 @@ export function ContactCard() {
             </>
           )}
         </button>
+        <p role="status" className={copyStatus === 'failed' ? 'muted' : 'sr-only'}>
+          {copyStatus === 'failed' ? 'Copy unavailable. Select the email address above or open it in your mail app.' : copyStatus === 'copied' ? 'Email address copied.' : ''}
+        </p>
       </div>
 
       <div className="contact-card-meta">

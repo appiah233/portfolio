@@ -27,23 +27,23 @@ export default function Page() {
             <div className="hero-copy">
               <div className="hero-badge">
                 <span className="status-dot" aria-hidden="true" />
-                <span>IT consulting &amp; software engineering</span>
+                <span>Microsoft 365 · Identity · Automation</span>
               </div>
-              <p className="hero-role">Eric Appiah Owusu / IT professional &amp; software engineer</p>
+              <p className="hero-role">Eric Appiah Owusu / Technical Consultant</p>
               <h1 id="hero-title" className="display">
                 <span>Secure.</span>
                 <span>Automate.</span>
                 <span className="accent-word">Build.</span>
               </h1>
               <p className="hero-description">
-                I’m Eric Appiah Owusu, an IT professional and software engineer based in Ghana. I work across Microsoft 365, identity, automation, and full-stack applications, with hands-on AWS deployment experience.
+                I’m a Technical Consultant based in Ghana. I support Microsoft 365 and Exchange Online, work with Microsoft Entra to manage user access, and automate business workflows. I also build and deploy web applications.
               </p>
               <div className="hero-ctas">
                 <a className="btn btn-primary" href="#contact">
-                  Discuss a project <ArrowUpRight size={16} aria-hidden="true" />
+                  Get in touch <ArrowUpRight size={16} aria-hidden="true" />
                 </a>
-                <a className="btn btn-outline" href="#services">
-                  Explore services <ArrowRight size={16} aria-hidden="true" />
+                <a className="btn btn-outline" href="#projects">
+                  See selected work <ArrowRight size={16} aria-hidden="true" />
                 </a>
                 <a
                   className="btn btn-outline"
